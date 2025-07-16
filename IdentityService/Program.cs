@@ -10,16 +10,25 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// DB & Identity setup...
+// Load Connection String from Environment Variable or appsettings.json
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+    ?? Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
 
+// Kestrel Configuration for Docker / CI/CD
+builder.WebHost.ConfigureKestrel(serverOptions =>
+{
+    serverOptions.ListenAnyIP(5000); // Make sure this port matches Dockerfile
+});
+
+// Database & Identity Setup
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(connectionString));
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<AppDbContext>()
     .AddDefaultTokenProviders();
 
-// JWT config...
+// JWT Setup
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]!);
 
@@ -30,7 +39,7 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    options.RequireHttpsMetadata = true;
+    options.RequireHttpsMetadata = !builder.Environment.IsDevelopment(); // Disable HTTPS metadata requirement in dev/docker
     options.SaveToken = true;
     options.TokenValidationParameters = new TokenValidationParameters
     {
@@ -45,25 +54,26 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
-
+// CORS Policy
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("OpenCors", policy =>
     {
-        policy
-            .AllowAnyOrigin()
-            .AllowAnyHeader()
-            .AllowAnyMethod();
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
     });
 });
 
+// Dependency Injection
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddControllers();
 
+// Swagger Setup
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(opt =>
 {
     opt.SwaggerDoc("v1", new OpenApiInfo { Title = "IdentityService API", Version = "v1" });
+
     opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Description = "JWT Authorization header using the Bearer scheme. Example: 'Bearer {token}'",
@@ -85,11 +95,14 @@ builder.Services.AddSwaggerGen(opt =>
     });
 });
 
+builder.Services.AddControllers();
+
 var app = builder.Build();
 
-
+// Middleware Pipeline
 app.UseHttpsRedirection();
 app.UseCors("OpenCors");
+
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -100,4 +113,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapControllers();
+
 app.Run();
