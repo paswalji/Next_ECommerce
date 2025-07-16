@@ -4,11 +4,11 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # Copy csproj and restore dependencies
-COPY IdentityService.csproj ./
+COPY IdentityService/*.csproj ./
 RUN dotnet restore
 
 # Copy the rest of the source code
-COPY . ./
+COPY IdentityService/. ./
 
 # Build the application
 RUN dotnet publish -c Release -o out
@@ -21,11 +21,10 @@ WORKDIR /app
 # Copy the published output from the build stage
 COPY --from=build /app/out .
 
-# Set environment variables (optional but recommended)
+# Set environment variables
 ENV ASPNETCORE_URLS=http://+:5000
 
-# Expose port 5000 for the container
+# Expose port
 EXPOSE 5000
 
-# Define the entry point to run the app
 ENTRYPOINT ["dotnet", "IdentityService.dll"]
