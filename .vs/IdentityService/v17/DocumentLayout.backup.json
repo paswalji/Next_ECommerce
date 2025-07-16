@@ -1,0 +1,97 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Learning\\Learning_Project\\repos\\IdentityService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0D0F55FE-1AC9-4D92-AF98-BD0D5A597C12}|IdentityService\\IdentityService.csproj|d:\\learning\\learning_project\\repos\\identityservice\\identityservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{0D0F55FE-1AC9-4D92-AF98-BD0D5A597C12}|IdentityService\\IdentityService.csproj|solutionrelative:identityservice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Learning\\Learning_Project\\repos\\IdentityService\\IdentityService\\Migrations\\20250716113731_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:IdentityService\\Migrations\\20250716113731_Initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D0F55FE-1AC9-4D92-AF98-BD0D5A597C12}|IdentityService\\IdentityService.csproj|d:\\learning\\learning_project\\repos\\identityservice\\identityservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D0F55FE-1AC9-4D92-AF98-BD0D5A597C12}|IdentityService\\IdentityService.csproj|solutionrelative:identityservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:13:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:12:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20250716113731_Initial.cs",
+              "DocumentMoniker": "D:\\Learning\\Learning_Project\\repos\\IdentityService\\IdentityService\\Migrations\\20250716113731_Initial.cs",
+              "RelativeDocumentMoniker": "IdentityService\\Migrations\\20250716113731_Initial.cs",
+              "ToolTip": "D:\\Learning\\Learning_Project\\repos\\IdentityService\\IdentityService\\Migrations\\20250716113731_Initial.cs",
+              "RelativeToolTip": "IdentityService\\Migrations\\20250716113731_Initial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T11:37:31.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Learning\\Learning_Project\\repos\\IdentityService\\IdentityService\\Program.cs",
+              "RelativeDocumentMoniker": "IdentityService\\Program.cs",
+              "ToolTip": "D:\\Learning\\Learning_Project\\repos\\IdentityService\\IdentityService\\Program.cs",
+              "RelativeToolTip": "IdentityService\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T11:29:11.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Learning\\Learning_Project\\repos\\IdentityService\\IdentityService\\appsettings.json",
+              "RelativeDocumentMoniker": "IdentityService\\appsettings.json",
+              "ToolTip": "D:\\Learning\\Learning_Project\\repos\\IdentityService\\IdentityService\\appsettings.json",
+              "RelativeToolTip": "IdentityService\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAADyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-16T11:17:45.184Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 100,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{131369f2-062d-44a2-8671-91ff31efb4f4}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
